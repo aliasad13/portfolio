@@ -6,14 +6,15 @@
 2. Fill values:
    - `RAILS_MASTER_KEY` from `config/master.key`
    - `SECRET_KEY_BASE` from `bin/rails secret`
-3. Start:
+3. Prepare database (first run, or after schema/migration changes):
+   - `docker-compose run --rm web bundle exec rails db:prepare`
+4. Start:
    - `docker-compose up --build`
-4. Open:
+5. Open:
    - `http://localhost:3000`
 
 ## Boot speed behavior
 - Container boot skips database prep by default for faster cold starts.
-- Local `docker-compose.yml` explicitly sets `RUN_DB_PREPARE_ON_BOOT=1` so local setup remains convenient.
 
 ## Render deploy notes
 - Use Docker deploy.
