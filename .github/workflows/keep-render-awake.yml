@@ -1,0 +1,25 @@
+name: Keep Render Awake
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render apps
+        run: |
+          set -euo pipefail
+
+          urls=(
+            "https://eduveda-0o8x.onrender.com"
+            "https://loan-tracker-tv5p.onrender.com"
+            "https://portfolio-4mib.onrender.com"
+          )
+
+          for url in "${urls[@]}"; do
+            echo "Pinging $url"
+            curl -fsS --max-time 20 "$url" > /dev/null
+          done
