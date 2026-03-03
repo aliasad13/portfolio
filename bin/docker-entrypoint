@@ -6,8 +6,8 @@ if [ -z "${LD_PRELOAD+x}" ]; then
     export LD_PRELOAD
 fi
 
-# Prepare database on container boot unless explicitly skipped
-if [ "${SKIP_DB_PREPARE}" != "1" ]; then
+# Keep boot fast by default. Run DB prepare only when explicitly enabled.
+if [ "${RUN_DB_PREPARE_ON_BOOT}" = "1" ]; then
   ./bin/rails db:prepare
 fi
 
