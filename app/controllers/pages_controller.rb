@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @about       = @about = "Rails developer with 4+ years of experience building and shipping web products across product and service-based companies."
     @hero_quote  = "Simple Is Beautiful"
     @location    = "India"
-    @email       = "aliasad@gmail.com"
+    @email       = "aliasadmshah@gmail.com"
     @linkedin    = "https://www.linkedin.com/in/ali-asad-profile"
 
     @skills = [
