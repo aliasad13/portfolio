@@ -1,0 +1,157 @@
+<% content_for :title, "#{@name} | Portfolio" %>
+
+<%# ── HERO ──────────────────────────────────────────────── %>
+<div class="wrap hero">
+  <div class="hero-top">
+    <p class="hero-label fi">
+      <span>Let's Build Together</span>
+    </p>
+
+    <h1 class="hero-name fi">
+      <% name_parts = @name.split(' ') %>
+      <span class="line-1"><%= name_parts.first.upcase %></span><br>
+      <span class="line-2"><%= name_parts.last.upcase %></span>
+    </h1>
+  </div>
+</div>
+
+<%# ── QUOTE BAND ─────────────────────────────────────────── %>
+<div class="quote-band">
+  <div class="wrap">
+    <blockquote class="hero-quote fi">
+      <span class="quote-mark">&ldquo;</span>
+      <span class="quote-text"><%= @hero_quote %></span>
+      <span class="quote-mark">&rdquo;</span>
+    </blockquote>
+  </div>
+</div>
+
+<%# ── ABOUT ─────────────────────────────────────────────── %>
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="sh">
+      <div class="sh-left">
+        <span class="sh-num">01</span>
+        <h2 class="sh-title">ABOUT</h2>
+      </div>
+      <div class="sh-rule"></div>
+    </div>
+
+    <div class="about-grid">
+      <p class="about-text fi"><%= @about %></p>
+
+      <div class="skills-stack fi">
+        <p class="skill-cat-label">Skills &amp; Technologies</p>
+        <div class="skill-pills">
+          <% @skills.each do |skill| %>
+            <span class="chip"><%= skill %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ── EXPERIENCE ─────────────────────────────────────────── %>
+<section id="experience" class="section">
+  <div class="wrap">
+    <div class="sh">
+      <div class="sh-left">
+        <span class="sh-num">02</span>
+        <h2 class="sh-title">EXPERIENCE</h2>
+      </div>
+      <div class="sh-rule"></div>
+    </div>
+
+    <div class="exp-list">
+      <% @experience.each do |exp| %>
+        <div class="exp-item fi">
+          <div class="exp-left">
+            <p class="exp-company"><%= exp[:company] %></p>
+            <p class="exp-period"><%= exp[:period] %></p>
+            <% if exp[:tags] %>
+              <div class="exp-tags">
+                <% exp[:tags].each do |tag| %>
+                  <span class="exp-tag"><%= tag %></span>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="exp-right">
+            <p class="exp-role"><%= exp[:role] %></p>
+            <% if exp[:points] %>
+              <ul class="exp-points">
+                <% exp[:points].each do |point| %>
+                  <li><%= point %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p class="exp-desc"><%= exp[:summary] %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# ── PROJECTS ────────────────────────────────────────────── %>
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="sh">
+      <div class="sh-left">
+        <span class="sh-num">03</span>
+        <h2 class="sh-title">MY PROJECTS</h2>
+      </div>
+      <div class="sh-rule"></div>
+    </div>
+
+    <div class="projects-grid">
+      <% @projects.each do |project| %>
+        <div class="proj-card fi">
+          <p class="proj-stack"><%= project[:stack] %></p>
+          <h3 class="proj-name"><%= project[:name] %></h3>
+          <p class="proj-desc"><%= project[:description] %></p>
+          <div class="proj-pill-row">
+            <% project[:stack].split(',').each do |t| %>
+              <span class="chip"><%= t.strip %></span>
+            <% end %>
+          </div>
+          <div class="proj-links">
+            <a href="<%= project[:link] %>" class="proj-link" target="_blank" rel="noopener">
+              View App &nearr;
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%# ── CONTACT ─────────────────────────────────────────────── %>
+<section id="contact" class="section">
+  <div class="wrap contact-inner">
+    <h2 class="contact-hed fi">
+      LET&rsquo;S<br>
+      <span class="em">BUILD</span><br>
+      <span class="lime">TOGETHER</span>
+    </h2>
+
+    <div class="contact-rows fi">
+      <div class="contact-row">
+        <span class="contact-row-key">Email</span>
+        <a href="mailto:<%= @email %>" class="contact-row-val"><%= @email %></a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-key">LinkedIn</span>
+        <a href="<%= @linkedin %>" class="contact-row-val" target="_blank" rel="noopener">
+          Ali Asad &nearr;
+        </a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-row-key">Location</span>
+        <span class="contact-row-val"><%= @location %></span>
+      </div>
+    </div>
+  </div>
+</section>
