@@ -11,15 +11,29 @@ jobs:
     steps:
       - name: Ping Render apps
         run: |
-          set -euo pipefail
+          set -uo pipefail
 
           urls=(
             "https://portfolio-4mib.onrender.com/up"
             "https://eduveda-0o8x.onrender.com/up"
-            "https://loan-tracker-tv5p.onrender.com/up"
+            "https://loan-tracker-tv5p.onrender.com"
           )
+
+          failures=0
 
           for url in "${urls[@]}"; do
             echo "Pinging $url"
-            curl -fsS --max-time 20 "$url" > /dev/null
+            status="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "$url" || true)"
+
+            if [ "$status" -ge 200 ] && [ "$status" -lt 400 ]; then
+              echo "OK ($status): $url"
+            else
+              echo "FAILED ($status): $url"
+              failures=$((failures + 1))
+            fi
           done
+
+          if [ "$failures" -gt 0 ]; then
+            echo "$failures URL(s) failed"
+            exit 1
+          fi
