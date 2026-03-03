@@ -14,9 +14,9 @@ jobs:
           set -euo pipefail
 
           urls=(
+            "https://portfolio-4mib.onrender.com/up"
             "https://eduveda-0o8x.onrender.com/up"
             "https://loan-tracker-tv5p.onrender.com/up"
-            "https://portfolio-4mib.onrender.com/up"
           )
 
           for url in "${urls[@]}"; do
