@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16
+    container_name: portfolio-db
+    environment:
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: portfolio
+      POSTGRES_DB: portfolio_production
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d portfolio_production"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-web
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://portfolio:portfolio@db:5432/portfolio_production
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

@@ -6,8 +6,8 @@ if [ -z "${LD_PRELOAD+x}" ]; then
     export LD_PRELOAD
 fi
 
-# If running the rails server then create or migrate existing database
-if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
+# Prepare database on container boot unless explicitly skipped
+if [ "${SKIP_DB_PREPARE}" != "1" ]; then
   ./bin/rails db:prepare
 fi
 
