@@ -119,6 +119,14 @@ nav {
     color: var(--lime);
 }
 
+.nav-brand-white {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted2);
+}
+
 .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -743,6 +751,49 @@ footer {
 /* ── PROJECTS GRID — 2 COLUMN ─────────────────────────────── */
 .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.proj-credentials {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.cred-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+    margin-bottom: 0.15rem;
+}
+
+.cred-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+}
+
+.cred-role {
+    opacity: 0.6;
+    min-width: 4rem;
+}
+
+.cred-val {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+}
+
+.cred-sep {
+    opacity: 0.4;
+}
+
+.cred-note {
+    opacity: 0.6;
+    font-style: italic;
 }
 
 @media (max-width: 860px) {

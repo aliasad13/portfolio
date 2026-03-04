@@ -4,7 +4,7 @@
 <div class="wrap hero">
   <div class="hero-top">
     <p class="hero-label fi">
-      <span>Let's Build Together</span>
+      <span>hi there, I'm</span>
     </p>
 
     <h1 class="hero-name fi">
@@ -106,7 +106,6 @@
       </div>
       <div class="sh-rule"></div>
     </div>
-
     <div class="projects-grid">
       <% @projects.each do |project| %>
         <div class="proj-card fi">
@@ -118,6 +117,25 @@
               <span class="chip"><%= t.strip %></span>
             <% end %>
           </div>
+
+          <% if project[:credentials].present? %>
+            <div class="proj-credentials">
+              <span class="cred-label">Try it</span>
+              <% project[:credentials].each do |cred| %>
+                <div class="cred-row">
+                  <span class="cred-role"><%= cred[:role] %></span>
+                  <% if cred[:email] %>
+                    <code class="cred-val"><%= cred[:email] %></code>
+                    <span class="cred-sep">/</span>
+                    <code class="cred-val"><%= cred[:password] %></code>
+                  <% else %>
+                    <span class="cred-note"><%= cred[:note] %></span>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+
           <div class="proj-links">
             <a href="<%= project[:link] %>" class="proj-link" target="_blank" rel="noopener">
               View App &nearr;
