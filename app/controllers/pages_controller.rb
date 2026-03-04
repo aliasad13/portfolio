@@ -15,7 +15,8 @@ class PagesController < ApplicationController
       "REST HTTP/XML APIs","Tailwind CSS",
       "FCM", "SSO", "USSD",
       "Webpack","JS Bundling","ESBuild", "Git", "Hotwire", "Stimulus",
-      "Docker", "Postman"
+      "Docker", "Postman",
+      "Flipper", "Unleash"
     ]
 
     @experience = [
