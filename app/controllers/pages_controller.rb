@@ -11,8 +11,11 @@ class PagesController < ApplicationController
     @skills = [
       "Ruby on Rails", "Ruby", "JavaScript",
       "MySQL", "PostgreSQL", "MongoDB",
-      "Redis", "Action Cable", "RabbitMQ", "REST APIs", "Tailwind CSS",
-      "FCM", "SSO", "USSD", "Webpack","JS Bundling","ESBuild", "Git", "Hotwire", "Stimulus",
+      "Redis", "Action Cable", "RabbitMQ",
+      "REST HTTP/XML APIs","Tailwind CSS",
+      "FCM", "SSO", "USSD",
+      "Webpack","JS Bundling","ESBuild", "Git", "Hotwire", "Stimulus",
+      "Docker", "Postman"
     ]
 
     @experience = [
