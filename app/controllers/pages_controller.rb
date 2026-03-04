@@ -9,9 +9,10 @@ class PagesController < ApplicationController
     @linkedin    = "https://www.linkedin.com/in/ali-asad-profile"
 
     @skills = [
-      "Ruby on Rails", "Ruby", "JavaScript", "Hotwire", "Stimulus",
-      "PostgreSQL", "Redis", "RabbitMQ", "REST APIs", "Tailwind CSS",
-      "FCM", "SSO", "USSD", "ESBuild", "Git"
+      "Ruby on Rails", "Ruby", "JavaScript",
+      "MySQL", "PostgreSQL", "MongoDB",
+      "Redis", "Action Cable", "RabbitMQ", "REST APIs", "Tailwind CSS",
+      "FCM", "SSO", "USSD", "Webpack","JS Bundling","ESBuild", "Git", "Hotwire", "Stimulus",
     ]
 
     @experience = [
