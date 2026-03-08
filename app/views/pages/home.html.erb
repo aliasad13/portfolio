@@ -3,15 +3,33 @@
 <%# ── HERO ──────────────────────────────────────────────── %>
 <div class="wrap hero">
   <div class="hero-top">
-    <p class="hero-label fi">
-      <span>hi there, I'm</span>
-    </p>
+    <div class="hero-name-row fi">
 
-    <h1 class="hero-name fi">
-      <% name_parts = @name.split(' ') %>
-      <span class="line-1"><%= name_parts.first.upcase %></span><br>
-      <span class="line-2"><%= name_parts.last.upcase %></span>
-    </h1>
+      <div class="hero-left">
+        <p class="hero-label">
+          <span>hi there, I'm</span>
+        </p>
+        <h1 class="hero-name">
+          <% name_parts = @name.split(' ') %>
+          <span class="line-1"><%= name_parts.first.upcase %></span>
+          <span class="line-2"><%= name_parts.last.upcase %></span>
+        </h1>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <span class="hero-photo-index">Ali Asad — Portfolio</span>
+        <%= image_tag "ali-profile.jpeg",
+                      alt: "#{@name} portrait",
+                      class: "hero-photo",
+                      loading: "eager" %>
+        <div class="hero-photo-corner-bl"></div>
+        <div class="hero-photo-badge">
+          <span class="hero-photo-badge-dot"></span>
+          <span class="hero-photo-badge-text">Online</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -19,9 +37,12 @@
 <div class="quote-band">
   <div class="wrap">
     <blockquote class="hero-quote fi">
-      <span class="quote-mark">&ldquo;</span>
-      <span class="quote-text"><%= @hero_quote %></span>
-      <span class="quote-mark">&rdquo;</span>
+      <p class="quote-pretext">and I think</p>
+      <div class="quote-main">
+        <span class="quote-mark">&ldquo;</span>
+        <span class="quote-text"><%= @hero_quote %></span>
+        <span class="quote-mark">&rdquo;</span>
+      </div>
     </blockquote>
   </div>
 </div>
