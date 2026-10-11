@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
     @name        = "Ali Asad"
     @headline    = "Rails Developer Building Clean, Useful Products"
-    @about       = "Rails developer with 4+ years of experience designing and shipping web products across both product and service-based companies. I enjoy working across the stack — from wrangling legacy codebases to connecting microservices — and care deeply about writing code that's maintainable, performant, and actually solves the problem."
+    @about       = "Rails developer with more than 4.5 years of experience designing and shipping web products across both product and service-based companies. I enjoy working across the stack — from wrangling legacy codebases to connecting microservices — and care deeply about writing code that's maintainable, performant, and actually solves the problem."
     @hero_quote  = "Simple Is Beautiful"
     @location    = "India"
     @email       = "aliasadmshah@gmail.com"
@@ -21,21 +21,22 @@ class PagesController < ApplicationController
 
     @experience = [
       {
-        role:    "Software Developer",
+        role:    "Software Developer - Ruby On Rails",
         company: "Diatoz Solutions",
-        period:  "2025 – Present",
+        period:  "Jan 2025 – May 2026",
         tags:    ["Rails 8", "Microservices", "RabbitMQ", "USSD", "Uganda"],
         points:  [
-          "Worked with Furaha Financial — a student loan platform operating in Uganda, built on a microservice architecture.",
-          "Partnered with Airtel UG and MTN UG to implement a USSD-based loan application journey, enabling students to apply without a smartphone or internet connection.",
-          "This initiative has helped over 20,000 students in Uganda with access to education.",
-          "Led a multi-step Rails upgrade from version 6 through 7 to 8, and migrated the asset pipeline from Webpacker to JS Bundling with ESBuild.",
+          "Worked with Furaha Financial — a leading student loan platform operating in Uganda, built on a microservice architecture.",
+          "Partnered with MNO giants like Airtel UG and MTN UG to implement a USSD-based loan application journey, enabling students to apply for a student loan without a smartphone or internet connection.",
+          "This initiative has helped over 100,000 students in Uganda with access to education.",
+          "Collaborated with Airtel - NxtPe to set up auto-debit for facilitating timely loan repayment",
+          "Led a multi-step Rails upgrade from version 6 through 7 to 8, and migrated the asset pipeline from Web packer to JS Bundling with ESBuild.",
           "Resolved 2,000+ security vulnerabilities through systematic upgrades of JavaScript and Rails dependencies.",
-          "Integrated RabbitMQ to stream LAN payment events from the application to a downstream consumer service, enabling automated loan repayment collection."
+          "Integrated RabbitMQ to set up an event driven system from the main application to a downstream consumer service, providing timely loan repayment data to the loan collection team."
         ]
       },
       {
-        role:    "Software Developer",
+        role:    "Software Developer - Ruby On Rails",
         company: "Foradian Technologies",
         period:  "Jan 2022 – Dec 2024",
         tags:    ["Fedena", "Rails 2/3/5", "Rails API", "FCM", "Zoho", "SSO", "Bangalore"],
