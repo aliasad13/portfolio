@@ -57,7 +57,7 @@ class PagesController < ApplicationController
         stack:       "Rails, PostgreSQL, Hotwire",
         link:        "https://eduveda-0o8x.onrender.com",
         credentials: [
-          { role: "Admin",   email: "admin3@abc.com",    password: "admin123"    },
+          { role: "Admin",   email: "admin@abc.com",    password: "admin123"    },
           { role: "Student", email: "student1@123.com",  password: "student1123" }
         ]
       },
